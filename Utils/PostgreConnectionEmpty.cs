@@ -4,19 +4,16 @@ using Npgsql;
 
 namespace dotnet_core_api.Utils
 {
-    public class PostgreConnectionEmpty
+    public class PostgreConnection
     {
-        public NpgsqlConnection GetConnection()
-        {
-            string connectionString = "";
-            return new NpgsqlConnection(connectionString);
-        }
+        private string connectionString = "";
 
-        public DataSet ExecuteQuery(NpgsqlConnection connection, string query)
+
+        public DataSet ExecuteQuery(string query)
         {
             try
             {
-                var result = "";
+                NpgsqlConnection connection = new NpgsqlConnection(connectionString);
                 connection.Open();
                 using (var cmd = new NpgsqlCommand(query, connection))
                 {

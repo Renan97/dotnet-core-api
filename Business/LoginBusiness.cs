@@ -1,5 +1,7 @@
 using System;
+using System.Data;
 using dotnet_core_api.Models;
+using dotnet_core_api.Utils;
 
 namespace dotnet_core_api
 {
@@ -10,6 +12,10 @@ namespace dotnet_core_api
             try
             {
                 Result result = Result.GetInstance;
+                PostgreConnection postgre = new PostgreConnection();
+                DataSet dataResult = postgre.ExecuteQuery("Select * from Users");
+
+
 
                 //some code
                 return Result.CreateResult(false, "Login efetuado com sucesso!", null);

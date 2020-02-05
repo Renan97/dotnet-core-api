@@ -23,6 +23,7 @@ namespace dotnet_core_api.Models
         }
         public static Result CreateResult(bool hasError, string message, dynamic objectResult = null)
         {
+            Result result = Result.GetInstance;
             result.hasError = hasError;
             result.message = message;
             result.objectResult = objectResult;

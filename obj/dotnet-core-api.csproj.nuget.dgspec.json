@@ -43,7 +43,7 @@
           "dependencies": {
             "Npgsql": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[4.1.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

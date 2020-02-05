@@ -12,7 +12,7 @@ namespace dotnet_core_api.Controllers
     {
 
         [HttpPost("")]
-        public IActionResult Login(User user)
+        public IActionResult Login([FromBody]User user)
         {
             try
             {
